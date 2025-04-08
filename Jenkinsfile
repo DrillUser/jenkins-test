@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/DrillUser/jenkins-test.git'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'echo "Hello, Jenkins!"'
@@ -14,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo "Running tests..."'
-                sh 'sleep 5'  // Имитация тестов
+                sh 'sleep 5'
             }
         }
         stage('Deploy') {
